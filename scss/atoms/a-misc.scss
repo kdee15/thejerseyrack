@@ -1,0 +1,103 @@
+// ATOMS [ MISC ]  ####################################################################################################
+
+// BASE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// A.1. FONTS ---------------------------------------------
+
+h1,
+h1 *,
+.fntH1,
+.fntH1 * {
+  font-family: $alex;
+  @include fntH1();
+}
+
+h2,
+h2 *,
+.fntH2,
+.fntH2 * {
+  font-family: $alex;
+  @include fntH2();
+}
+
+h3,
+h3 *,
+.fntH3,
+.fntH3 * {
+  font-family: $cormorant;
+  @include fntH3();
+}
+
+h4,
+h4 *,
+.fntH4,
+.fntH4 * {
+  font-family: $cormorant;
+  @include fntH4();
+}
+
+.fnt72f,
+.fnt72f * {
+  @include font(72);
+}
+
+.fnt30f,
+.fnt30f * {
+  @include font(30);
+}
+
+.fnt18f,
+.fnt18f * {
+  @include font(18);
+}
+
+p {
+  @include font(16);
+}
+
+// A.1. END -----------------------------------------------
+
+.a-responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// A.1. ICONS ---------------------------------------------
+
+.aIcon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 5px auto;
+  &.close {
+    background: url("/images/icons/icon--close.svg") center center no-repeat;
+  }
+}
+
+// A.1. END -----------------------------------------------
+
+// A.2. SPECIFIC ICONS ------------------------------------
+
+// A.2.1. CLOSE -------------
+.close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  border: 2px solid #ccc;
+  background-color: #f2f2f2;
+  border-radius: 50px;
+  z-index: 10000;
+  opacity: 1;
+  &:hover {
+    opacity: 1;
+  }
+}
+// A.2.1. END ---------------
+
+// END ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ########################################################################################################
