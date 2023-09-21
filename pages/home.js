@@ -1,4 +1,5 @@
 import { createClient } from "contentful";
+import ComponentSimpleTitle from "../components/organisms/componentSimpleTitle/ComponentSimpleTitle";
 const { C_SPACE_ID, C_DELIVERY_KEY } = require("../helpers/contentful-config");
 
 export async function getStaticProps(context) {
@@ -24,11 +25,11 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ Page }) {
-  console.log("Page", Page);
+  const pageTitle = Page[0].fields.components[0].fields;
 
   return (
     <div className="anchor" id="top">
-      <h1>haze gifted</h1>
+      <ComponentSimpleTitle contentModule={pageTitle} />
     </div>
   );
 }
