@@ -42,8 +42,8 @@ function ComponentHeroBanner({ contentModule }) {
             )}
           </figure>
         ) : null}
-        <h1>{title}</h1>
-        <h4>{subtitle}</h4>
+        {title ? <h1>{title}</h1> : null}
+        {subtitle ? <h4>{subtitle}</h4> : null}
       </div>
 
       {mobileView ? (
