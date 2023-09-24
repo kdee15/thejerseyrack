@@ -1,0 +1,82 @@
+// COMPONENT [ HERO BLOCK ] ###########################################################################################
+@import "scss/.base/module-index";
+
+.oProjectBlock {
+  // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
+
+  padding: 100px 0;
+  .aBlockTitle {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .blockWrapper {
+    @include aspect-ratio(100%, 100%);
+    position: relative;
+    margin: 30px auto 150px;
+  }
+
+  .mVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .oProjectCard {
+    .mImage {
+      aspect-ratio: 1/1;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  .mCtaBlock {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 50px auto 0;
+  }
+
+  // A. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // B. GRACEFUL DEGRADATION ++++++++++++++++++++++++++++++
+
+  @media ($md-dn) {
+  }
+
+  // B. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
+
+  @media ($md-up) {
+    .oContentBlock {
+      .mImage {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      .aImage {
+        margin: 20px auto;
+      }
+    }
+  }
+
+  // C. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++
+
+  @media ($lg-up) {
+  }
+
+  // D. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // E. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++
+
+  @media ($xl-up) {
+  }
+
+  // E. END +++++++++++++++++++++++++++++++++++++++++++++++
+}
+
+// END OF FILE ########################################################################################################
