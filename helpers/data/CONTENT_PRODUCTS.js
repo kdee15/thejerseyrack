@@ -1,15 +1,33 @@
-export const PROJECT_CONTENT = `
+export const PRODUCT_CONTENT = `
   query GetProduct($slug: String!) {
     pageProductCollection(where: { slug: $slug }, limit: 1) {
       items {
         title
         slug
+        price
+        description {
+          json
+        }
+        imagesCollection {
+          items {
+            title
+            url
+            width
+            height
+          }
+        }
+        featureListCollection {
+          items {
+            title
+            featureOptions
+          }
+        }
       }
     }
   }
 `;
 
-export const PROJECT_SLUG = `
+export const PRODUCT_SLUG = `
 query {
   pageProductCollection {
       items {
