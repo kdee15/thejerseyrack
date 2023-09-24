@@ -26,7 +26,6 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ Page }) {
-  console.log("page", Page);
   const componentHeroBanner = Page[0].fields.components[0].fields;
   const componentProductList = Page[0].fields.components[1].fields;
   return (
