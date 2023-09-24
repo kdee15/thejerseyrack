@@ -30,9 +30,9 @@ function ComponentProductList({ contentModule }) {
               </Link>
             ))}
           <div className={classes.mCtaBlock}>
-            <Link href={`/products/`}>
+            {/* <Link href={`/products/`}>
               <a className={`${classes.aBtn} aBtn`}>See the rest ...</a>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
