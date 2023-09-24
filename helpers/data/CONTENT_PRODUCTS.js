@@ -36,3 +36,24 @@ query {
     }
 }
 `;
+
+export const PRODUCT_LIST = `
+query GetHome {
+  pageProductCollection {
+    items {
+        title
+        slug
+        ... on pageProducts {
+          title
+          isFeatured
+          previewImage {
+            title
+            url
+            width
+            height
+          }
+        }
+    }
+  }
+}
+`;

@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import ComponentHeroBanner from "../components/organisms/componentHeroBanner/ComponentHeroBanner";
+import ComponentProductList from "../components/blocks/componentProductList/ComponentProductList";
 const { C_SPACE_ID, C_DELIVERY_KEY } = require("../helpers/contentful-config");
 
 export async function getStaticProps(context) {
@@ -27,9 +28,11 @@ export async function getStaticProps(context) {
 export default function Home({ Page }) {
   console.log("page", Page);
   const componentHeroBanner = Page[0].fields.components[0].fields;
+  const componentProductList = Page[0].fields.components[1].fields;
   return (
     <div className="anchor" id="top">
       <ComponentHeroBanner contentModule={componentHeroBanner} />
+      <ComponentProductList contentModule={componentProductList} />
     </div>
   );
 }
