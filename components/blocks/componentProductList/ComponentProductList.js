@@ -11,9 +11,7 @@ function ComponentProductList({ contentModule }) {
         </div>
         <div className={`${classes.oRow} row`}>
           {productList
-            .filter(
-              (filteredProduct) => filteredProduct.fields.isFeatured === true
-            )
+            .filter((filteredProduct) => filteredProduct.fields.price === 150)
             .map((product, index) => (
               <Link href={`/products/${product.fields.slug}`} key={index}>
                 <article className={`${classes.oProjectCard} col-12 col-md-3`}>

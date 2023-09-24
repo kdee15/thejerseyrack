@@ -4,7 +4,6 @@
 .oProjectBlock {
   // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
 
-  background-color: red;
   padding: 100px 0;
   .aBlockTitle {
     text-align: center;
@@ -12,7 +11,7 @@
     margin-bottom: 50px;
   }
   .blockWrapper {
-    @include aspect-ratio(100%, 56.5%);
+    @include aspect-ratio(100%, 100%);
     position: relative;
     margin: 30px auto 150px;
   }
@@ -27,7 +26,7 @@
 
   .oProjectCard {
     .mImage {
-      aspect-ratio: 16/8;
+      aspect-ratio: 1/1;
       background-size: cover;
       background-position: center;
     }

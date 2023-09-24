@@ -47,7 +47,7 @@ export default function Product({ product }) {
           <div className={`col-12 col-md-6`}>
             <h3>{title}</h3>
             <h5>{price}</h5>
-            <div>{documentToReactComponents(description.json)}</div>
+            <div>{documentToReactComponents(description?.json)}</div>
           </div>
         </div>
       </div>

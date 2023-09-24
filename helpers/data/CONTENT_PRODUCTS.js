@@ -43,7 +43,7 @@ query GetHome {
     items {
         title
         slug
-        ... on pageProducts {
+        ... on pageProduct {
           title
           isFeatured
           previewImage {
