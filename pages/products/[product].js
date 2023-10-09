@@ -91,8 +91,6 @@ export async function getStaticProps({ params }) {
   const heroBanner = data.componentHeroBanner;
   const pageFooter = data.componentFooter;
 
-  console.log("peaches", data);
-
   return {
     props: { product: productData, heroBanner, pageFooter },
   };
