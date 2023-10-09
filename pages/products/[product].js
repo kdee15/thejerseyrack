@@ -2,6 +2,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Slider from "react-slick";
 import ComponentCarouselImage from "../../components/molecules/componentCarouselImage/ComponentCarouselImage";
 import classes from "./Projects.module.scss";
+import ComponentHeroBanner from "../../components/organisms/componentHeroBanner/ComponentHeroBanner";
+import ComponentFooter from "../../components/organisms/componentFooter/ComponentFooter";
 
 const {
   C_DELIVERY_KEY,
@@ -19,8 +21,7 @@ const {
  * @constructor
  */
 
-export default function Product({ product }) {
-  console.log("data", product);
+export default function Product({ product, heroBanner, pageFooter }) {
   const { title, price, description, imagesCollection } = product;
   const images = imagesCollection.items;
   const settings = {
@@ -35,24 +36,30 @@ export default function Product({ product }) {
   };
   return (
     <div className={classes.oProductPage}>
+      <ComponentHeroBanner contentModule={heroBanner} />
       <div className={`container`}>
         <div className={`row`}>
-          <div className={`col-12 col-md-6`}>
+          <div className={`${classes.oImage} col-12 col-md-6`}>
             <Slider {...settings}>
               {images.map((item, index) => (
                 <ComponentCarouselImage item={item} key={index} />
               ))}
             </Slider>
           </div>
-          <div className={`col-12 col-md-6`}>
-            <h3>{title}</h3>
-            <h5>{price}</h5>
-            {description?.json ? (
-              <div>{documentToReactComponents(description?.json)}</div>
-            ) : null}
+          <div className={`${classes.oCopy} col-12 col-md-6`}>
+            <div className={`${classes.oWrapper}`}>
+              <h2 className={`${classes.aTitle}`}>{title}</h2>
+              {description?.json ? (
+                <div className={`${classes.mCopy}`}>
+                  {documentToReactComponents(description?.json)}
+                </div>
+              ) : null}
+              <p className={`${classes.aPrice} fnt18f`}>R{price}</p>
+            </div>
           </div>
         </div>
       </div>
+      <ComponentFooter contentModule={pageFooter} />
     </div>
   );
 }
@@ -81,9 +88,11 @@ export async function getStaticProps({ params }) {
 
   const { data } = await result.json();
   const [productData] = data.pageProductCollection.items;
+  const heroBanner = data.componentHeroBanner;
+  const pageFooter = data.componentFooter;
 
   return {
-    props: { product: productData },
+    props: { product: productData, heroBanner, pageFooter },
   };
 }
 

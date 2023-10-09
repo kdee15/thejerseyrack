@@ -4,57 +4,6 @@
 
 // A.1. FONTS ---------------------------------------------
 
-h1,
-h1 *,
-.fntH1,
-.fntH1 * {
-  font-family: $alex;
-  @include fntH1();
-}
-
-h2,
-h2 *,
-.fntH2,
-.fntH2 * {
-  font-family: $alex;
-  @include fntH2();
-}
-
-h3,
-h3 *,
-.fntH3,
-.fntH3 * {
-  font-family: $cormorant;
-  @include fntH3();
-}
-
-h4,
-h4 *,
-.fntH4,
-.fntH4 * {
-  font-family: $cormorant;
-  @include fntH4();
-}
-
-.fnt72f,
-.fnt72f * {
-  @include font(72);
-}
-
-.fnt30f,
-.fnt30f * {
-  @include font(30);
-}
-
-.fnt18f,
-.fnt18f * {
-  @include font(18);
-}
-
-p {
-  @include font(16);
-}
-
 // A.1. END -----------------------------------------------
 
 .a-responsive-image {

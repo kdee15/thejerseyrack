@@ -24,6 +24,38 @@ export const PRODUCT_CONTENT = `
         }
       }
     }
+    componentHeroBanner (id:"3CecxOEDYMpLWodUQPQSnh") {
+      title
+      subtitle
+      homepageBanner
+      logo {
+        title
+        url
+        width
+        height
+      }
+      backgroundImage {
+        title
+        url
+        width
+        height
+      }
+      backgroundImageMobile {
+        title
+        url
+        width
+        height
+      }
+    }
+    componentFooter (id:"56yTRJ5YQghOlhHJli7HBx") {
+      title
+      logo {
+        title
+        url
+        width
+        height
+      }
+    }
   }
 `;
 
@@ -34,5 +66,43 @@ query {
         slug
       }
     }
+}
+`;
+
+export const PRODUCT_LIST = `
+query GetHome {
+  pageProductCollection {
+    items {
+        title
+        slug
+        ... on PageProduct {
+          title
+
+        }
+    }
+  }
+  componentHeroBanner (id:"3CecxOEDYMpLWodUQPQSnh") {
+    title
+    subtitle
+    homepageBanner
+    logo {
+      title
+      url
+      width
+      height
+    }
+    backgroundImage {
+      title
+      url
+      width
+      height
+    }
+    backgroundImageMobile {
+      title
+      url
+      width
+      height
+    }
+  }
 }
 `;

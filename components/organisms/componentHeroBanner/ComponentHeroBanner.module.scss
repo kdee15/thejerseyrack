@@ -7,7 +7,7 @@
   &.bannerHome {
     min-height: 100vh;
 
-    .introImage {
+    .mBackgroundImage {
       @include position(absolute, 0);
       background-size: cover;
       z-index: -1;
@@ -29,26 +29,30 @@
   }
 
   &.bannerPage {
-    min-height: 30vh;
     position: relative;
-    .introImage {
+    padding: 30px 0;
+    .mLogo {
+      display: inline-block;
+      width: 100px;
+      aspect-ratio: 1/1;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+    .oContentBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+    .mBackgroundImage {
       @include position(absolute, 0);
       background-size: cover;
       z-index: -1;
-    }
-
-    .oContentBlock {
-      display: flex;
-      align-items: center;
-      height: 30vh;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .mLogo {
-      width: 80%;
-      max-width: 400px;
-      margin: 0 auto;
+      opacity: 0.4;
+      background-color: white;
     }
   }
 
@@ -57,6 +61,11 @@
   // B. GRACEFUL DEGRADATION ++++++++++++++++++++++++++++++
 
   @media ($md-dn) {
+    &.bannerPage {
+      .oContentBlock {
+        align-items: center;
+      }
+    }
   }
 
   // B. END +++++++++++++++++++++++++++++++++++++++++++++++
@@ -64,6 +73,15 @@
   // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
 
   @media ($md-up) {
+    &.bannerPage {
+      .mLogo {
+        margin: 0 25px 0 0;
+      }
+      .oContentBlock {
+        width: auto;
+        align-items: left;
+      }
+    }
   }
 
   // C. END +++++++++++++++++++++++++++++++++++++++++++++++
