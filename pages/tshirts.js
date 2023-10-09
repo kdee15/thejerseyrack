@@ -3,7 +3,7 @@ import ComponentHeroBanner from "../components/organisms/componentHeroBanner/Com
 import ComponentFooter from "../components/organisms/componentFooter/ComponentFooter";
 import classes from "../pages/products/Products.module.scss";
 import ComponentProductCard from "../components/blocks/componentProductCard/ComponentProductCard";
-import Nav from "../components/molecules/nav/pageNav";
+import NavPge from "../components/molecules/nav/pageNav";
 const { PRODUCT_LIST } = require("../helpers/data/CONTENT_PRODUCTS");
 const {
   C_GRAPHQL_URL,
@@ -45,19 +45,22 @@ export async function getStaticProps() {
 
 export default function Home({ products, heroBanner, pageMenu, pageFooter }) {
   const navItems = pageMenu.linkListCollection.items;
+  console.log("products", products[0].category);
   return (
     <div className="anchor" id="top">
       <ComponentHeroBanner contentModule={heroBanner} />
-      <Nav contentModule={navItems} />
+      <NavPge contentModule={navItems} />
       <div className="container">
         <div className={`${classes.oBlockRow} row`}>
-          {products.map((product, index) => (
-            <Link href={`/products/${product.slug}`} key={index}>
-              <article className={`${classes.oProductCard} col-12 col-md-4`}>
-                <ComponentProductCard contentModule={product} />
-              </article>
-            </Link>
-          ))}
+          {products
+            .filter((filteredProduct) => filteredProduct.category == "t_shirt")
+            .map((product, index) => (
+              <Link href={`/products/${product.slug}`} key={index}>
+                <article className={`${classes.oProductCard} col-12 col-md-4`}>
+                  <ComponentProductCard contentModule={product} />
+                </article>
+              </Link>
+            ))}
         </div>
       </div>
       <ComponentFooter contentModule={pageFooter} />
