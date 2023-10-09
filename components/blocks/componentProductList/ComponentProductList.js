@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import classes from "./ComponentProductList.module.scss";
+import ComponentProductCard from "../componentProductCard/ComponentProductCard";
 
 function ComponentProductList({ contentModule }) {
   const { title, productList } = contentModule;
@@ -16,37 +16,14 @@ function ComponentProductList({ contentModule }) {
             .map((product, index) => (
               <Link href={`/products/${product.fields.slug}`} key={index}>
                 <article className={`${classes.oProjectCard} col-12 col-md-3`}>
-                  <div className={classes.oCard}>
-                    <figure
-                      className={`${classes.mImage}`}
-                      style={{
-                        backgroundImage: `url(https:${product.fields.previewImage.fields.file.url})`,
-                      }}
-                    ></figure>
-                    <div className={`${classes.mBody}`}>
-                      <h5 className={`${classes.aTitle}`}>
-                        {product.fields.title}
-                      </h5>
-                      {product.fields.description ? (
-                        <div className={`${classes.aText}`}>
-                          {documentToReactComponents(
-                            product.fields.description
-                          )}
-                        </div>
-                      ) : null}
-                      <div className={`${classes.aPrice}`}>
-                        <span>R</span>
-                        {product.fields.price}
-                      </div>
-                    </div>
-                  </div>
+                  <ComponentProductCard contentModule={product.fields} />
                 </article>
               </Link>
             ))}
           <div className={classes.mCtaBlock}>
-            {/* <Link href={`/products/`}>
+            <Link href={`/tshirts`}>
               <a className={`${classes.aBtn} aBtn`}>See the rest ...</a>
-            </Link> */}
+            </Link>
           </div>
         </div>
       </div>
