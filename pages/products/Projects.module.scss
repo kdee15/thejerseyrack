@@ -12,6 +12,27 @@
   position: relative;
 }
 
+.oImage {
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.oCopy {
+  background-color: #f4f4f4;
+  .oWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px;
+    .mCopy {
+      padding: 50px 0 20px;
+    }
+    .aPrice {
+      font-weight: 800;
+    }
+  }
+}
+
 // A.1.1. PROJECT CARD ------
 .oProjectCard {
   cursor: pointer;

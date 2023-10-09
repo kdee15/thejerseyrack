@@ -21,7 +21,7 @@
   }
   .slick-dots {
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 5px 0;
     padding: 0;
     display: block;
     text-align: center;
@@ -32,7 +32,7 @@
       height: 10px;
       margin-left: 10px;
       border-radius: 10px;
-      background: white;
+      background: orange;
       button {
         display: block;
         @include position(absolute, 0);
@@ -43,7 +43,8 @@
       }
       &:hover,
       &.slick-active {
-        box-shadow: 0 0 6px 4px black;
+        box-shadow: 0 0 3px 2px #888;
+        background: white;
       }
       &:active,
       &:focus {

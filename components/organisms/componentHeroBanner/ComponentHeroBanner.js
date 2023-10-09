@@ -2,6 +2,7 @@ import React from "react";
 import { isMobile } from "react-device-detect";
 import classes from "./ComponentHeroBanner.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 function ComponentHeroBanner({ contentModule }) {
@@ -20,70 +21,84 @@ function ComponentHeroBanner({ contentModule }) {
   }, []);
 
   return (
-    <section
-      className={`${classes.oHeroBlock} ${
-        homepageBanner ? classes.bannerHome : classes.bannerPage
-      }`}
-    >
-      <div className={`${classes.oContentBlock}`}>
-        {homepageBanner ? (
-          <figure className={classes.mLogo}>
-            {logo && (
-              <Image
-                className={`${classes.aImage} a-responsive-image`}
-                src={logo?.fields?.file?.url}
-                alt={logo?.fields.title}
-                width={logo?.fields.file.details.image.width}
-                height={logo?.fields.file.details.image.height}
-                aria-hidden="true"
-                layout="responsive"
-                priority="true"
-              />
-            )}
-          </figure>
-        ) : null}
-        {title ? <h1>{title}</h1> : null}
-        {subtitle ? <h4>{subtitle}</h4> : null}
-      </div>
-
-      {mobileView ? (
-        <>
-          {homepageBanner ? (
+    <>
+      {homepageBanner ? (
+        <section className={`${classes.oHeroBlock} ${classes.bannerHome}`}>
+          <div className={`${classes.oContentBlock}`}>
+            <figure className={classes.mLogo}>
+              {logo && (
+                <Image
+                  className={`${classes.aImage} a-responsive-image`}
+                  src={logo?.fields?.file?.url}
+                  alt={logo?.fields.title}
+                  width={logo?.fields.file.details.image.width}
+                  height={logo?.fields.file.details.image.height}
+                  aria-hidden="true"
+                  layout="responsive"
+                  priority="true"
+                />
+              )}
+            </figure>
+            <div className={classes.mCopy}>
+              {title ? <h1>{title}</h1> : null}
+              {subtitle ? <h4>{subtitle}</h4> : null}
+            </div>
+          </div>
+          {mobileView ? (
             <figure
-              className={`${classes.introImage}`}
+              className={`${classes.mBackgroundImage}`}
               style={{
                 backgroundImage: `url(http:${backgroundImageMobile?.fields?.file.url})`,
               }}
             ></figure>
           ) : (
             <figure
-              className={`${classes.introImage}`}
-              style={{
-                backgroundImage: `url(${backgroundImageMobile?.url})`,
-              }}
-            ></figure>
-          )}
-        </>
-      ) : (
-        <>
-          {homepageBanner ? (
-            <figure
-              className={`${classes.introImage}`}
+              className={`${classes.mBackgroundImage}`}
               style={{
                 backgroundImage: `url(http:${backgroundImage?.fields.file.url})`,
               }}
             ></figure>
+          )}
+        </section>
+      ) : (
+        <section className={`${classes.oHeroBlock} ${classes.bannerPage}`}>
+          <div className={`container`}>
+            <div className={`row`}>
+              {logo && (
+                <Link href={`/`}>
+                  <figure
+                    className={classes.mLogo}
+                    style={{
+                      backgroundImage: `url(${logo?.url})`,
+                    }}
+                  ></figure>
+                </Link>
+              )}
+              <div className={`${classes.oContentBlock}`}>
+                {title ? <h1>{title}</h1> : null}
+                {subtitle ? <h4>{subtitle}</h4> : null}
+              </div>
+            </div>
+          </div>
+
+          {mobileView ? (
+            <figure
+              className={`${classes.mBackgroundImage}`}
+              style={{
+                backgroundImage: `url(${backgroundImageMobile?.url})`,
+              }}
+            ></figure>
           ) : (
             <figure
-              className={`${classes.introImage}`}
+              className={`${classes.mBackgroundImage}`}
               style={{
                 backgroundImage: `url(${backgroundImage?.url})`,
               }}
             ></figure>
           )}
-        </>
+        </section>
       )}
-    </section>
+    </>
   );
 }
 
