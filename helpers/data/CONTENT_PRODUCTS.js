@@ -78,6 +78,7 @@ query GetHome {
         description {
           json
         }
+        category
       sys {
         id
       }

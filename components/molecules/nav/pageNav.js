@@ -4,7 +4,7 @@ import BurgerMenu from "../burgerMenu/BurgerMenu";
 import Link from "next/dist/client/link";
 import classes from "./Nav.module.scss";
 
-export default function Nav(contentModule) {
+export default function NavPage(contentModule) {
   const [isActive, setIsActive] = useState();
   const [mobileView, setMobileView] = useState();
   const handleToggle = () => setIsActive(!isActive);
@@ -23,8 +23,10 @@ export default function Nav(contentModule) {
       </span>
       {mobileView ? (
         <div
-          className={`${classes.mNavMobile} ${
-            isActive ? `${classes.navOpen}` : `${classes.navClosed}`
+          className={`${classes.mNavMobile} mNavMobile ${
+            isActive
+              ? `${classes.navOpen} navOpen`
+              : `${classes.navClosed} navClose`
           }`}
         >
           <div onClick={handleToggle} className={classes.mNavBurger}>
