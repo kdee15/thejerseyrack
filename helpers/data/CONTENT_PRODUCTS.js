@@ -75,9 +75,25 @@ query GetHome {
     items {
         title
         slug
+        description {
+          json
+        }
+      sys {
+        id
+      }
         ... on PageProduct {
           title
-
+          slug
+          price
+          description {
+            json
+          }
+          previewImage {
+            title
+            url
+            width
+            height
+          }
         }
     }
   }
@@ -98,6 +114,26 @@ query GetHome {
       height
     }
     backgroundImageMobile {
+      title
+      url
+      width
+      height
+    }
+  }
+  componentMenu (id:"2omEAFPnQJklNZM8GmLp51") {
+    title 
+    linkListCollection {
+      items {
+        title
+        url
+        isExternal
+        customClass
+      }
+    }
+  }
+  componentFooter (id:"56yTRJ5YQghOlhHJli7HBx") {
+    title
+    logo {
       title
       url
       width

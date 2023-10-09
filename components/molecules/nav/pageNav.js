@@ -13,7 +13,8 @@ export default function Nav(contentModule) {
     setMobileView(isMobile);
   }, []);
 
-  const { linkList } = contentModule.contentModule;
+  const linkList = contentModule.contentModule;
+  console.log("contentModule", linkList);
 
   return (
     <nav className={classes.oNavMain}>
@@ -32,12 +33,12 @@ export default function Nav(contentModule) {
           <ul className={classes.mMenu}>
             {linkList.map((link, index) => (
               <li className={classes.navLink} key={index}>
-                <Link onClick={handleToggle} href={link.fields.url}>
+                <Link onClick={handleToggle} href={link.url}>
                   <a
                     className={classes.aLink}
-                    target={`${link.fields.isExternal ? "_blank" : "_parent"}`}
+                    target={`${link.isExternal ? "_blank" : "_parent"}`}
                   >
-                    {link.fields.label}
+                    {link.label}
                   </a>
                 </Link>
               </li>
@@ -49,12 +50,12 @@ export default function Nav(contentModule) {
           <ul className={classes.mMenu}>
             {linkList.map((link, index) => (
               <li className={classes.navLink} key={index}>
-                <Link href={link.fields.url}>
+                <Link href={link.url}>
                   <a
                     className={`${classes.aLink} fnt16b`}
-                    target={`${link.fields.isExternal ? "_blank" : "_parent"}`}
+                    target={`${link.isExternal ? "_blank" : "_parent"}`}
                   >
-                    {link.fields.title}
+                    {link.title}
                   </a>
                 </Link>
               </li>

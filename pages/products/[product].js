@@ -1,7 +1,7 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Slider from "react-slick";
 import ComponentCarouselImage from "../../components/molecules/componentCarouselImage/ComponentCarouselImage";
-import classes from "./Projects.module.scss";
+import classes from "./Products.module.scss";
 import ComponentHeroBanner from "../../components/organisms/componentHeroBanner/ComponentHeroBanner";
 import ComponentFooter from "../../components/organisms/componentFooter/ComponentFooter";
 
