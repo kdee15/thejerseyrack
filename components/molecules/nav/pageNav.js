@@ -39,7 +39,7 @@ export default function NavPage(contentModule) {
                     className={classes.aLink}
                     target={`${link.isExternal ? "_blank" : "_parent"}`}
                   >
-                    {link.label}
+                    {link.title}
                   </a>
                 </Link>
               </li>
