@@ -16,7 +16,7 @@ export default function ComponentBrandCollection(contentModule) {
       <h2 className={`${classes.aTitle} fntH2`}>{title}</h2>
       <div className={`${classes.oContainer} container`}>
         <div className={`${classes.oRow} row no-gutters`}>
-          <div className={`${classes.oCol} col col-md-6`}>
+          <div className={`${classes.oCol} col-12 col-md-6`}>
             <Image
               className={`${classes.aImage} a-responsive-image`}
               src={image?.fields?.file?.url}
@@ -28,7 +28,7 @@ export default function ComponentBrandCollection(contentModule) {
               priority="true"
             />
           </div>
-          <div className={`${classes.oColRight} col col-md-6`}>
+          <div className={`${classes.oColRight} col-12 col-md-6`}>
             <div className={`${classes.oCol} ${classes.oColVideo} col-12`}>
               <ComponentVideoEmbed contentModule={videoEmbedLink} />
             </div>

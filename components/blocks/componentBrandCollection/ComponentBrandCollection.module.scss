@@ -22,7 +22,6 @@
 
 .oColRight {
   .oCol {
-    height: 50%;
     padding: 0;
     &.oColVideo {
       padding: 0;
@@ -32,6 +31,7 @@
       .oColImageSmall,
       .oColProductLink {
         height: 100%;
+        aspect-ratio: 1/1;
       }
     }
   }
@@ -54,6 +54,17 @@
 // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
 
 @media ($md-up) {
+  .oColRight {
+    .oCol {
+      height: 50%;
+      .oRowScaled {
+        .oColImageSmall,
+        .oColProductLink {
+          aspect-ratio: auto;
+        }
+      }
+    }
+  }
 }
 
 // C. END +++++++++++++++++++++++++++++++++++++++++++++++
