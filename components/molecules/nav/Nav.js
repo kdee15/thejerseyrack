@@ -37,7 +37,7 @@ export default function Nav(contentModule) {
                     className={classes.aLink}
                     target={`${link.fields.isExternal ? "_blank" : "_parent"}`}
                   >
-                    {link.fields.label}
+                    {link.fields.title}
                   </a>
                 </Link>
               </li>

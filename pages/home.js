@@ -3,6 +3,7 @@ import Nav from "../components/molecules/nav/Nav";
 import ComponentHeroBanner from "../components/organisms/componentHeroBanner/ComponentHeroBanner";
 import ComponentProductList from "../components/blocks/componentProductList/ComponentProductList";
 import ComponentFooter from "../components/organisms/componentFooter/ComponentFooter";
+import ComponentBrandCollection from "../components/blocks/componentBrandCollection/ComponentBrandCollection";
 const { C_SPACE_ID, C_DELIVERY_KEY } = require("../helpers/contentful-config");
 
 export async function getStaticProps(context) {
@@ -42,11 +43,13 @@ export async function getStaticProps(context) {
 export default function Home({ Page, pageMenu, PageFooter }) {
   const componentHeroBanner = Page[0].fields.components[0].fields;
   const componentProductList = Page[0].fields.components[1].fields;
+  const componentBrandCollection = Page[0].fields.components[2].fields;
   return (
     <div className="anchor" id="top">
       <ComponentHeroBanner contentModule={componentHeroBanner} />
       <Nav contentModule={pageMenu} />
       <ComponentProductList contentModule={componentProductList} />
+      <ComponentBrandCollection contentModule={componentBrandCollection} />
       <ComponentFooter contentModule={PageFooter} />
     </div>
   );

@@ -45,7 +45,6 @@ export async function getStaticProps() {
 
 export default function Home({ products, heroBanner, pageMenu, pageFooter }) {
   const navItems = pageMenu.linkListCollection.items;
-  console.log("products", products[0].category);
   return (
     <div className="anchor" id="top">
       <ComponentHeroBanner contentModule={heroBanner} />

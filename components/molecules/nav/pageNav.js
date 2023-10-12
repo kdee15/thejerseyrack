@@ -14,7 +14,6 @@ export default function NavPage(contentModule) {
   }, []);
 
   const linkList = contentModule.contentModule;
-  console.log("contentModule", linkList);
 
   return (
     <nav className={classes.oNavMain}>
@@ -40,7 +39,7 @@ export default function NavPage(contentModule) {
                     className={classes.aLink}
                     target={`${link.isExternal ? "_blank" : "_parent"}`}
                   >
-                    {link.label}
+                    {link.title}
                   </a>
                 </Link>
               </li>

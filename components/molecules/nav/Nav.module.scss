@@ -3,7 +3,7 @@
 @import "scss/.base/module-index";
 
 // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
-.navMain {
+.oNavMain {
   .mNavMobile {
     position: fixed;
     top: 0;
@@ -13,6 +13,7 @@
     transform: translateY(-100%);
     transition: 0.3s;
     opacity: 1;
+    height: 100vh;
     &.navOpen {
       background-color: white;
       transform: translateY(0%);
