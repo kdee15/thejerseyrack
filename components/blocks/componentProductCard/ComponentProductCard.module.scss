@@ -59,6 +59,31 @@
     }
   }
 
+  &.mGoatEdition {
+    * {
+      text-decoration: none !important;
+    }
+    margin: 0;
+    .oCard {
+      margin: 0;
+      .mImage {
+        aspect-ratio: auto;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    &:hover {
+      .mImage {
+        transform: scale(1.02);
+        transition: 0.3s;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
   // A. END +++++++++++++++++++++++++++++++++++++++++++++++
 
   // B. GRACEFUL DEGRADATION ++++++++++++++++++++++++++++++

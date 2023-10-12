@@ -40,6 +40,47 @@
 }
 
 // A.1. END -----------------------------------------------
+// A.1. END -----------------------------------------------
+
+.oBrandCollection {
+  margin-bottom: 100px;
+}
+
+.aTitle {
+  margin: 50px auto 30px;
+  text-align: center;
+}
+
+.mImageSmall {
+  background-size: cover;
+  background-position: bottom center;
+  height: 100%;
+  width: 100%;
+}
+
+.oColRight {
+  .oCol {
+    height: 50%;
+    padding: 0;
+    &.oColVideo {
+      padding: 0;
+    }
+    .oRowScaled {
+      height: 100%;
+      .oColImageSmall,
+      .oColProductLink {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.oLinkItem {
+  display: inline;
+  text-decoration: none;
+}
+
+// A.1. END -----------------------------------------------
 
 // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

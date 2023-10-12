@@ -14,7 +14,6 @@ export default function NavPage(contentModule) {
   }, []);
 
   const linkList = contentModule.contentModule;
-  console.log("contentModule", linkList);
 
   return (
     <nav className={classes.oNavMain}>

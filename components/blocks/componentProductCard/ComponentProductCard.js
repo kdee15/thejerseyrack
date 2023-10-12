@@ -2,10 +2,11 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import classes from "./ComponentProductCard.module.scss";
 
 export default function ComponentProductCard(contentModule) {
-  const { title, previewImage, description, price } =
+  const { title, previewImage, description, price, customClass } =
     contentModule.contentModule;
+
   return (
-    <section className={classes.oCard}>
+    <section className={`${classes.oCard} ${classes[customClass]}`}>
       <div className={classes.oCard}>
         {previewImage?.fields?.file.url ? (
           <figure
