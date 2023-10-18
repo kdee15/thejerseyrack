@@ -11,6 +11,7 @@
       @include position(absolute, 0);
       background-size: cover;
       z-index: -1;
+      background-position: center;
     }
 
     .oContentBlock {
