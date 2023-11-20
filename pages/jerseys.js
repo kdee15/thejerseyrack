@@ -44,11 +44,10 @@ export async function getStaticProps() {
 }
 
 export default function Home({ products, heroBanner, pageMenu, pageFooter }) {
-  const navItems = pageMenu.linkListCollection.items;
   return (
     <div className="anchor" id="top">
       <ComponentHeroBanner contentModule={heroBanner} />
-      <NavPge contentModule={navItems} />
+      <NavPge contentModule={pageMenu} />
       <div className="container">
         <div className={`${classes.oBlockRow} row`}>
           {products
