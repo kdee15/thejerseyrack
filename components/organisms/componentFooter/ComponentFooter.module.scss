@@ -13,11 +13,53 @@
   }
 }
 
+.mLogo,
+.mContact {
+  position: relative;
+  max-width: 200px;
+  aspect-ratio: 1/1;
+  margin: 20px auto;
+  .aImageBG {
+    @include position(absolute, 0);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.oNavigation {
+  &.footerMenu {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    max-width: 200px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .mMenuItem {
+      position: relative;
+      flex: 1 1 90px;
+      .mImage {
+        width: 90px;
+        aspect-ratio: 1/1;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
 // A. END +++++++++++++++++++++++++++++++++++++++++++++++
 
 // B. GRACEFUL DEGRADATION ++++++++++++++++++++++++++++++
 
 @media ($md-dn) {
+  .oCol {
+    margin-bottom: 40px;
+  }
 }
 
 // B. END +++++++++++++++++++++++++++++++++++++++++++++++
@@ -32,6 +74,11 @@
 // D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++
 
 @media ($md-up) {
+  .oMenuCol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 // D. END +++++++++++++++++++++++++++++++++++++++++++++++

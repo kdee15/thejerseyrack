@@ -1,4 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Image from "next/dist/client/image";
 import classes from "./ComponentProductCard.module.scss";
 
 export default function ComponentProductCard(contentModule) {
@@ -8,13 +9,19 @@ export default function ComponentProductCard(contentModule) {
   return (
     <section className={`${classes.oCard} ${classes[customClass]}`}>
       <div className={classes.oCard}>
-        {previewImage?.fields?.file.url ? (
-          <figure
-            className={`${classes.mImage}`}
-            style={{
-              backgroundImage: `url(${previewImage.fields.file.url})`,
-            }}
-          ></figure>
+        {previewImage.fields ? (
+          <figure className={`${classes.mImage}`}>
+            <Image
+              className={`${classes.aImage}`}
+              src={`${previewImage.fields.file.url}`}
+              height={previewImage.fields.file.details.image.height}
+              width={previewImage.fields.file.details.image.width}
+              alt={previewImage.title}
+              aria-previewImage="true"
+              layout="responsive"
+              priority="true"
+            />
+          </figure>
         ) : (
           <figure
             className={`${classes.mImage}`}
@@ -23,7 +30,6 @@ export default function ComponentProductCard(contentModule) {
             }}
           ></figure>
         )}
-
         <div className={`${classes.mBody}`}>
           <h5 className={`${classes.aTitle}`}>{title}</h5>
           {description?.json ? (
