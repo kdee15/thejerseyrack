@@ -59,7 +59,6 @@ export default function Product({ product, heroBanner, pageFooter, pageMenu }) {
               <p className={`${classes.aPrice} fnt18f`}>R{price}</p>
               <br />
               <br />
-              <br />
               <p className={classes.ctaBlurb}>
                 If you are interested in our products, reach out via the
                 <b> whatsapp chat</b> below, or via the
