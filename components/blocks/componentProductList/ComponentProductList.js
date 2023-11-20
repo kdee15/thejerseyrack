@@ -3,7 +3,8 @@ import classes from "./ComponentProductList.module.scss";
 import ComponentProductCard from "../componentProductCard/ComponentProductCard";
 
 function ComponentProductList({ contentModule }) {
-  const { title, productList } = contentModule;
+  const { title, productList, linkUrl } = contentModule;
+  console.log("jeezee", contentModule);
   return (
     <section className={`${classes.oProjectBlock}`}>
       <div className={`${classes.oContainer} container`}>
@@ -21,7 +22,7 @@ function ComponentProductList({ contentModule }) {
               </Link>
             ))}
           <div className={classes.mCtaBlock}>
-            <Link href={`/tshirts`}>
+            <Link href={linkUrl}>
               <a className={`${classes.aBtn} aBtn`}>See the rest ...</a>
             </Link>
           </div>
