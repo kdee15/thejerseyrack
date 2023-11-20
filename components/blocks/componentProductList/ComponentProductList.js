@@ -4,7 +4,6 @@ import ComponentProductCard from "../componentProductCard/ComponentProductCard";
 
 function ComponentProductList({ contentModule }) {
   const { title, productList, linkUrl } = contentModule;
-  console.log("jeezee", contentModule);
   return (
     <section className={`${classes.oProjectBlock}`}>
       <div className={`${classes.oContainer} container`}>

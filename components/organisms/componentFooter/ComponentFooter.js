@@ -5,7 +5,6 @@ import classes from "./ComponentFooter.module.scss";
 export default function ComponentFooter(contentModule) {
   const { title, logo, image, socialMedia } = contentModule.contentModule;
   const smMenu = socialMedia?.linkListCollection?.items;
-  console.log("fooooot", socialMedia);
   return (
     <section className={classes.oFooter}>
       <div className={`${classes.oContainer} container`}>
