@@ -4,6 +4,7 @@ import ComponentCarouselImage from "../../components/molecules/componentCarousel
 import classes from "./Products.module.scss";
 import ComponentHeroBanner from "../../components/organisms/componentHeroBanner/ComponentHeroBanner";
 import ComponentFooter from "../../components/organisms/componentFooter/ComponentFooter";
+import NavPage from "../../components/molecules/nav/pageNav";
 
 const {
   C_DELIVERY_KEY,
@@ -21,7 +22,7 @@ const {
  * @constructor
  */
 
-export default function Product({ product, heroBanner, pageFooter }) {
+export default function Product({ product, heroBanner, pageFooter, pageMenu }) {
   const { title, price, description, imagesCollection } = product;
   const images = imagesCollection.items;
   const settings = {
@@ -36,6 +37,7 @@ export default function Product({ product, heroBanner, pageFooter }) {
   };
   return (
     <div className={classes.oProductPage}>
+      <NavPage contentModule={pageMenu} />
       <ComponentHeroBanner contentModule={heroBanner} />
       <div className={`container`}>
         <div className={`row`}>
@@ -98,9 +100,10 @@ export async function getStaticProps({ params }) {
   const [productData] = data.pageProductCollection.items;
   const heroBanner = data.componentHeroBanner;
   const pageFooter = data.componentFooter;
+  const pageMenu = data.componentMenu;
 
   return {
-    props: { product: productData, heroBanner, pageFooter },
+    props: { product: productData, heroBanner, pageFooter, pageMenu },
   };
 }
 

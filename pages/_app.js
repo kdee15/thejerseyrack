@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
         defer
       ></script>
       <div
-        class="elfsight-app-872284fd-e602-4d71-ba92-a75a88fadaae"
+        className={`elfsight-app-872284fd-e602-4d71-ba92-a75a88fadaae`}
         data-elfsight-app-lazy
       ></div>
     </Layout>
