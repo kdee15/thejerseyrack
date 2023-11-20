@@ -55,6 +55,28 @@ export const PRODUCT_CONTENT = `
         width
         height
       }
+      image {
+        title
+        url
+        width
+        height
+      }
+      socialMedia {
+        linkListCollection {
+          items {
+            title
+            url
+            isExternal
+            customClass
+            image {
+              title
+              url
+              width
+              height
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -139,6 +161,28 @@ query GetHome {
       url
       width
       height
+    }
+    image {
+      title
+      url
+      width
+      height
+    }
+    socialMedia {
+      linkListCollection {
+        items {
+          title
+          url
+          isExternal
+          customClass
+          image {
+            title
+            url
+            width
+            height
+          }
+        }
+      }
     }
   }
 }

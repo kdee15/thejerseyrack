@@ -55,6 +55,12 @@ export const PRODUCT_CONTENT = `
         width
         height
       }
+      image {
+        title
+        url
+        width
+        height
+      }
     }
   }
 `;
@@ -164,6 +170,12 @@ query GetHome {
   componentFooter (id:"56yTRJ5YQghOlhHJli7HBx") {
     title
     logo {
+      title
+      url
+      width
+      height
+    }
+    image {
       title
       url
       width
