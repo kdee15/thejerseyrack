@@ -42,12 +42,14 @@ export async function getStaticProps(context) {
 
 export default function Home({ Page, pageMenu, PageFooter }) {
   const componentHeroBanner = Page[0].fields.components[0].fields;
-  const componentProductList = Page[0].fields.components[1].fields;
-  const componentBrandCollection = Page[0].fields.components[2].fields;
+  const componentNBAList = Page[0].fields.components[1].fields;
+  const componentProductList = Page[0].fields.components[2].fields;
+  const componentBrandCollection = Page[0].fields.components[3].fields;
   return (
     <div className="anchor" id="top">
       <ComponentHeroBanner contentModule={componentHeroBanner} />
       <Nav contentModule={pageMenu} />
+      <ComponentProductList contentModule={componentNBAList} />
       <ComponentProductList contentModule={componentProductList} />
       <ComponentBrandCollection contentModule={componentBrandCollection} />
       <ComponentFooter contentModule={PageFooter} />
