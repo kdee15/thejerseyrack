@@ -17,7 +17,6 @@ export default function ComponentProductCard(contentModule) {
               height={previewImage.fields.file.details.image.height}
               width={previewImage.fields.file.details.image.width}
               alt={previewImage.title}
-              aria-previewImage="true"
               layout="responsive"
               priority="true"
             />

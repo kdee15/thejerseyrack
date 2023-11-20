@@ -13,7 +13,8 @@ export default function NavPage(contentModule) {
     setMobileView(isMobile);
   }, []);
 
-  const linkList = contentModule.contentModule;
+  const { linkListCollection } = contentModule.contentModule;
+  const linkList = linkListCollection.items;
 
   return (
     <nav className={classes.oNavMain}>

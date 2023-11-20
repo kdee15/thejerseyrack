@@ -47,6 +47,17 @@ export const PRODUCT_CONTENT = `
         height
       }
     }
+    componentMenu (id:"2omEAFPnQJklNZM8GmLp51") {
+      title 
+      linkListCollection {
+        items {
+          title
+          url
+          isExternal
+          customClass
+        }
+      }
+    }
     componentFooter (id:"56yTRJ5YQghOlhHJli7HBx") {
       title
       logo {
