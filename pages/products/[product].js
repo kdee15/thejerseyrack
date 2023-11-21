@@ -32,7 +32,6 @@ export default function Product({
 }) {
   const { title, price, description, imagesCollection } = product;
   const images = imagesCollection.items;
-  console.log("whatsappMe", whatsappMe);
   const settings = {
     dots: true,
     infinite: true,
