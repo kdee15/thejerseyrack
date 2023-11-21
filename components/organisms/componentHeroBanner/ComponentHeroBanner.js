@@ -48,14 +48,14 @@ function ComponentHeroBanner({ contentModule }) {
             <figure
               className={`${classes.mBackgroundImage}`}
               style={{
-                backgroundImage: `url(http:${backgroundImageMobile?.fields?.file.url})`,
+                backgroundImage: `url(https:${backgroundImageMobile?.fields?.file.url})`,
               }}
             ></figure>
           ) : (
             <figure
               className={`${classes.mBackgroundImage}`}
               style={{
-                backgroundImage: `url(http:${backgroundImage?.fields.file.url})`,
+                backgroundImage: `url(https:${backgroundImage?.fields.file.url})`,
               }}
             ></figure>
           )}
