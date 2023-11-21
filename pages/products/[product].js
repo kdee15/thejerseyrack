@@ -5,6 +5,7 @@ import classes from "./Products.module.scss";
 import ComponentHeroBanner from "../../components/organisms/componentHeroBanner/ComponentHeroBanner";
 import ComponentFooter from "../../components/organisms/componentFooter/ComponentFooter";
 import NavPage from "../../components/molecules/nav/pageNav";
+import Link from "next/link";
 
 const {
   C_DELIVERY_KEY,
@@ -22,7 +23,13 @@ const {
  * @constructor
  */
 
-export default function Product({ product, heroBanner, pageFooter, pageMenu }) {
+export default function Product({
+  product,
+  heroBanner,
+  pageFooter,
+  pageMenu,
+  whatsappMe,
+}) {
   const { title, price, description, imagesCollection } = product;
   const images = imagesCollection.items;
   const settings = {
@@ -57,13 +64,16 @@ export default function Product({ product, heroBanner, pageFooter, pageMenu }) {
                 </div>
               ) : null}
               <p className={`${classes.aPrice} fnt18f`}>R{price}</p>
-              <br />
-              <br />
-              <p className={classes.ctaBlurb}>
-                If you are interested in our products, reach out via the
-                <b> whatsapp chat</b> below, or via the
-                <b> contacts in the footer</b>.
-              </p>
+              <Link href={whatsappMe.url}>
+                <a className={`${classes.oWhatsAppLink}`}>
+                  <figure
+                    className={`${classes.mWhatsAppLink}`}
+                    style={{
+                      backgroundImage: `url(${whatsappMe.image.url})`,
+                    }}
+                  ></figure>
+                </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -100,9 +110,16 @@ export async function getStaticProps({ params }) {
   const heroBanner = data.componentHeroBanner;
   const pageFooter = data.componentFooter;
   const pageMenu = data.componentMenu;
+  const whatsappMe = data.subcomponentLinkItem;
 
   return {
-    props: { product: productData, heroBanner, pageFooter, pageMenu },
+    props: {
+      product: productData,
+      heroBanner,
+      pageFooter,
+      pageMenu,
+      whatsappMe,
+    },
   };
 }
 

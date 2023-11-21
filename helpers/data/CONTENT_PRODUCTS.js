@@ -58,6 +58,21 @@ export const PRODUCT_CONTENT = `
         }
       }
     }
+    subcomponentLinkItem (id:"6tjbwLRLVq9DNUqnHV2zzO") {
+      title
+      url
+      isExternal
+      customClass
+      image {
+        title
+        url
+        width
+        height
+      }
+      sys {
+        id
+      }
+    }
     componentFooter (id:"56yTRJ5YQghOlhHJli7HBx") {
       title
       logo {
