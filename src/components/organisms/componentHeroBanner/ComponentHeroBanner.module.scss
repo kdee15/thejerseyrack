@@ -1,0 +1,106 @@
+// COMPONENT [ HERO BLOCK ] ###########################################################################################
+
+@import "../../../scss/.base/_module-index";
+
+.oHeroBlock {
+  // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
+
+  &.bannerHome {
+    min-height: 100vh;
+
+    .mBackgroundImage {
+      @include position(absolute, 0);
+      background-size: cover;
+      z-index: -1;
+      background-position: center;
+    }
+
+    .oContentBlock {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .mLogo {
+      width: 80%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
+  &.bannerPage {
+    position: relative;
+    padding: 30px 0;
+    .mLogo {
+      display: inline-block;
+      width: 100px;
+      aspect-ratio: 1/1;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+    .oContentBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+    .mBackgroundImage {
+      @include position(absolute, 0);
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.4;
+      background-color: white;
+    }
+  }
+
+  // A. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // B. GRACEFUL DEGRADATION ++++++++++++++++++++++++++++++
+
+  @media ($md-dn) {
+    &.bannerPage {
+      .oContentBlock {
+        align-items: center;
+      }
+    }
+  }
+
+  // B. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
+
+  @media ($md-up) {
+    &.bannerPage {
+      .mLogo {
+        margin: 0 25px 0 0;
+      }
+      .oContentBlock {
+        width: auto;
+        align-items: left;
+      }
+    }
+  }
+
+  // C. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++
+
+  @media ($lg-up) {
+  }
+
+  // D. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // E. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++
+
+  @media ($xl-up) {
+  }
+
+  // E. END +++++++++++++++++++++++++++++++++++++++++++++++
+}
+
+// END OF FILE ########################################################################################################
