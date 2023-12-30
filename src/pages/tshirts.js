@@ -53,8 +53,12 @@ export default function Home({ products, heroBanner, pageMenu, pageFooter }) {
           {products
             .filter((filteredProduct) => filteredProduct.category == "t_shirt")
             .map((product, index) => (
-              <Link href={`/products/${product.slug}`} key={index}>
-                <article className={`${classes.oProductCard} col-12 col-md-4`}>
+              <Link
+                href={`/products/${product.slug}`}
+                key={index}
+                className={`col-12 col-md-4`}
+              >
+                <article className={`${classes.oProductCard}`}>
                   <ComponentProductCard contentModule={product} />
                 </article>
               </Link>

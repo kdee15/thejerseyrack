@@ -25,7 +25,7 @@ export default function ComponentProductCard(contentModule) {
           <figure
             className={`${classes.mImage}`}
             style={{
-              backgroundImage: `url(https:${previewImage.url})`,
+              backgroundImage: `url(${previewImage.url})`,
             }}
           ></figure>
         )}
